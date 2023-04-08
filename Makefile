@@ -18,27 +18,7 @@ nvim-configure:
 	ln -snf $(PWD)/nvim ~/.config/nvim
 	# nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
-deps-install: deps-gem deps-composer deps-npm deps-pip deps-go
-
-deps-pip:
-	# pip2 install --upgrade pynvim
-	pip3 install --upgrade pynvim
-	pip3 install --upgrade vim-vint spellcheck yamllint codespell
-	pip3 install --upgrade autopep8 flake8 bandit pytype # black
-
-deps-gem:
-	gem install --no-document neovim
-	gem install --no-document solargraph solargraph-rails
-	gem install --no-document rubocop rubocop-rspec rubocop-rails rubocop-performance rubocop-rake
-	gem install --no-document sorbet sorbet-runtime
-	gem install --no-document haml_lint slim_lint erb_lint
-	gem install --no-document brakeman reek
-
-deps-composer:
-	composer --no-interaction global require \
-		squizlabs/php_codesniffer \
-		phpstan/phpstan
-		# phpactor/phpactor
+deps-install: deps-npm deps-go
 
 deps-npm:
 	npm install -g neovim

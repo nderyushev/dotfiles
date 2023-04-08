@@ -10,19 +10,12 @@ function M.run(use)
 
   use {
     "cuducos/yaml.nvim",
-    ft = {"yaml"}, -- optional
+    ft = { "yaml" }, -- optional
     requires = {
       "nvim-treesitter/nvim-treesitter",
       "nvim-telescope/telescope.nvim" -- optional
     },
   }
-
-  --     use 'isobit/vim-caddyfile'
-  use 'tpope/vim-rails'
-  --     use 'slim-template/vim-slim'
-  use 'dhruvasagar/vim-table-mode'
-  use { 'mfussenegger/nvim-jdtls' }
-
 end
 
 return M

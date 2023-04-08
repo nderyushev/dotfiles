@@ -1,40 +1,20 @@
 local M = {}
 
 function M.run(use)
-  servers = {
+   servers = {
     'marksman',
     'tsserver',
-    'phpactor',
-    'ansiblels',
     'bashls',
     'dockerls',
     'elixirls',
     'gopls',
     'grammarly',
-    'gradle_ls',
-    'graphql',
-    'groovyls',
-    'hls',
-    'jdtls',
-    'kotlin_language_server',
-    'omnisharp',
-    'psalm',
-    'pyright',
-    -- 'sorbet',
     'sqlls',
     'lua_ls',
-    'stylelint_lsp',
-    'terraformls',
-    -- 'rubocop',
     'vimls',
     'yamlls',
-    'html',
-    -- 'haml-lint',
-    'cssls',
     'eslint',
     'jsonls',
-    -- 'ruby_ls',
-    'solargraph',
   }
 
   use {
@@ -82,17 +62,6 @@ function M.run(use)
         bind('n', '<leader>ca', vim.lsp.buf.code_action, opts)
         -- bind('n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<cr>', noremap)
       end)
-
-      local solargraph_opts = {
-        cmd = { 'bin/solargraph' }
-      }
-
-      local sorbet_opts = {
-        cmd = { 'bin/sorbet' }
-      }
-
-      lsp.configure('sorbet', sorbet_opts)
-      lsp.configure('solargraph', solargraph_opts)
 
       lsp.setup()
 
@@ -182,7 +151,6 @@ function M.run(use)
       })
 
       cmp.setup(cmp_config)
-
     end
   }
 

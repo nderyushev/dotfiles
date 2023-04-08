@@ -3,7 +3,6 @@
 -- https://github.com/ecosse3/nvim/blob/master/lua/plugins.lua
 
 return require('packer').startup({
-
   function(use)
     -- https://github.com/gelguy/wilder.nvim
     -- https://github.com/sindrets/diffview.nvim
@@ -20,6 +19,10 @@ return require('packer').startup({
     use { 'nvim-lua/plenary.nvim' }
     use { 'kyazdani42/nvim-web-devicons' }
     use { 'svban/YankAssassin.vim' }
+
+    -- databases
+    use { 'tpope/vim-dadbod' }
+    use { 'kristijanhusak/vim-dadbod-ui' }
 
     -- TODO: add
     -- https://github.com/gbprod/yanky.nvim
@@ -252,8 +255,8 @@ return require('packer').startup({
             mappings = {
               -- restore default behavior
               i = {
-                ['<C-u>'] = false,
-                ['<C-d>'] = false,
+                    ['<C-u>'] = false,
+                    ['<C-d>'] = false,
                 -- ["<c-t>"] = trouble.open_with_trouble
               },
               n = {
@@ -271,9 +274,7 @@ return require('packer').startup({
       end,
       requires = { 'nvim-lua/plenary.nvim' }
     }
-
   end,
-
   config = {
     enable = true,
     -- log = { level = 'debug' },
